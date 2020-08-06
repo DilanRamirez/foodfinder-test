@@ -4,15 +4,16 @@
 
 .container {
   position: relative;
+  margin-top: 50px;
   padding-right: 0px !important;
   padding-left: 0px !important;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
   z-index: 2 !important;
   background-color: #fff !important;
   border-radius: 15px;
-  width: 95% !important;
+  width: 30% !important;
+  height: 30%;
   box-shadow: 10px 10px 72px -11px rgba(0, 0, 0, 0.29) !important;
 }
 
@@ -28,28 +29,16 @@
 .card-img {
   background-color: #bbe6ff;
   border-radius: 10px 10px 50px 50px !important;
+  height: 500px;
   z-index: 1 !important;
 }
 
-.card {
+.card-top {
   position: relative;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  min-width: 0;
-  width: 200px;
-  word-wrap: break-word;
-  background-color: #fff;
-  background-clip: border-box;
-  border: 1px solid rgba(0, 0, 0, .125);
-  border-radius: .25rem;
-  margin-left: auto;
-  margin-right: auto;
+  height: 500px;
 }
 
 .card-content {
-  margin-top: 5px;
   position: relative;
   padding: 35px;
 }
@@ -93,6 +82,11 @@
   font-size: 1.5em !important;
 }
 
+.fa,
+.fas {
+  border: 0px;
+}
+
 .card-stars {
   position: relative;
   display: flex;
@@ -106,17 +100,18 @@
   * {
     z-index: 2 !important;
   }
+
   .container {
     position: relative;
     padding-right: 0px !important;
     padding-left: 0px !important;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
     z-index: 2 !important;
     background-color: #fff !important;
-    border-radius: 15px;
+    border-radius: 2.5rem;
     width: 95% !important;
+    height: 85vh !important;
     box-shadow: 10px 10px 72px -11px rgba(0, 0, 0, 0.29) !important;
   }
 
@@ -130,37 +125,25 @@
   }
 
   .card-img {
+    position: relative;
+    height: 100%;
     background-color: #bbe6ff;
-    border-radius: 10px 10px 50px 50px !important;
+    border-radius: 4rem 4rem 50px 50px !important;
     z-index: 1 !important;
   }
 
-  .card {
+  .card-top {
     position: relative;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    min-width: 0;
-    width: 200px;
-    word-wrap: break-word;
-    background-color: #fff;
-    background-clip: border-box;
-    border: 1px solid rgba(0, 0, 0, .125);
-    border-radius: .25rem;
-    margin-left: auto;
-    margin-right: auto;
+    height: 50%;
   }
 
   .card-content {
-    margin-top: 5px;
     position: relative;
-    padding: 35px;
+    /* padding: 35px; */
   }
 
   .card-subInfo {
-    margin-top: 15px;
-    padding: 10px;
+    /* padding: 10px; */
     text-align: center;
   }
 
@@ -176,10 +159,11 @@
   .btn-card {
     background-color: #bbe6ff;
     position: absolute;
+    top: 0%;
     size: 30px;
     padding: 25px;
     border: 0px;
-    border-radius: 15px;
+    border-radius: 1rem;
     z-index: 3 !important;
   }
 
@@ -213,3 +197,28 @@
     margin-right: auto;
   }
 }
+
+/* @media (min-width: 1200px) {
+
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl {
+    max-width: 1140px;
+    max-height: 750px;
+  }
+
+  .card-top {
+    position: relative;
+    height: 50%;
+  }
+
+  .card-img {
+    position: relative;
+    height: 100%;
+    background-color: #bbe6ff;
+    border-radius: 4rem 4rem 50px 50px !important;
+    z-index: 1 !important;
+  }
+} */
