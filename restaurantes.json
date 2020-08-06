@@ -17,7 +17,7 @@
     "records": [
       {
         "Nombre": "Hotel Boutique Casa Reyna",
-        "Direcci\u00f3n": "Privada 2 Ote. 1007, Centro, 72000 Puebla, Pue., México",
+        "Direcci\u00f3n": "Privada 2 Ote. 1007, Centro.",
         "Tel\u00e9fono": "+52 222 232 0032",
         "Horario": "8:30 - 19:00",
         "Costo": "$",
@@ -26,7 +26,7 @@
       },
       {
         "Nombre": "El Mural de los Poblanos",
-        "Direcci\u00f3n": "16 de Septiembre 506, Centro, 72000 Puebla, Pue., Méxicoa 2 Ote. 1007, Centro, 72000 Puebla, Pue., México",
+        "Direcci\u00f3n": "16 de Septiembre 506, Centro.",
         "Tel\u00e9fono": "+522222420503",
         "Horario": "8:00 - 00:00",
         "Costo": "$$$",
@@ -53,7 +53,7 @@
       },
       {
         "Nombre": "Tagers",
-        "Direcci\u00f3n": "Calle 5 Sur 4910, Residencial Boulevares, 72440 Puebla, Pue., México",
+        "Direcci\u00f3n": "Calle 5 Sur 4910, Residencial Boulevares.",
         "Tel\u00e9fono": "+522222110329",
         "Horario": "09:00-20:00",
         "Costo": "$$",
