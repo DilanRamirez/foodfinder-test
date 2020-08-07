@@ -171,18 +171,18 @@
     right: 0px;
   }
 
-  /* .fa-times{
-    color: #a0a0a0;
+ /* .fa-times{
+    color: #fff;
   }
   
   .fa-heart {
-    color: #a0a0a0;
+    color: #fff;
   } */
 
   .fa-star {
     color: yellow;
     margin-right: 10px;
-    border: 1px solid;
+    border: 0px solid;
   }
 
   .fa-lg {
