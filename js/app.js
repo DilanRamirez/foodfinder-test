@@ -131,11 +131,11 @@ const restaurantes = async () => {
                 '<p class="black-bold"> <b>' +
                 parsedData.costo[i] +
                 "</b></p>" +
-                '<div class="card-stars">'+
-                '<i class="fa fa-star fa-lg"></i>'+
-                '<i class="fa fa-star fa-lg"></i>'+
-                '<i class="fa fa-star fa-lg"></i>'+
-                '</div>'
+                '<div class="card-stars">' +
+                '<i class="fa fa-star fa-lg"></i>' +
+                '<i class="fa fa-star fa-lg"></i>' +
+                '<i class="fa fa-star fa-lg"></i>' +
+                "</div>",
             ];
 
             $("#card-content").append(html);
@@ -149,9 +149,16 @@ const restaurantes = async () => {
 };
 
 $(document).ready(function () {
-  $("#container-turistico").hide();
-  $("#container-restaurantes").hide();
+  $("#mapid").hide();
+  $("#buttons").hide();
   $("#container-card").hide();
+});
+
+$("#home-btn").click(function () {
+  console.log("clicked");
+  $("#home").hide();
+  $("#mapid").show();
+  $("#buttons").show();
 });
 
 $("#turisitco").click(function () {
@@ -166,7 +173,6 @@ $("#restaurantes").click(function () {
 });
 
 $("#close-card").click(function () {
-  console.log("clicked");
   $("#container-card").hide();
   document.getElementById("card-content").innerHTML = "";
 });
