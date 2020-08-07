@@ -207,7 +207,7 @@
     size: 25px;
     text-align: center;
     font-weight: bold;
-    margin-top: 50px;
+    margin-top: 20%;
   }
   .home-subtitle {
     padding: 0px 50px 0px 50px;
@@ -220,6 +220,7 @@
     position: relative;
     display: flex;
     width: 215px;
+    margin-top: 15%;
   }
 
   .home-btn {
@@ -234,28 +235,3 @@
     bottom: 4rem;
   }
 }
-
-/* @media (min-width: 1200px) {
-
-  .container,
-  .container-lg,
-  .container-md,
-  .container-sm,
-  .container-xl {
-    max-width: 1140px;
-    max-height: 750px;
-  }
-
-  .card-top {
-    position: relative;
-    height: 50%;
-  }
-
-  .card-img {
-    position: relative;
-    height: 100%;
-    background-color: #bbe6ff;
-    border-radius: 4rem 4rem 50px 50px !important;
-    z-index: 1 !important;
-  }
-} */
