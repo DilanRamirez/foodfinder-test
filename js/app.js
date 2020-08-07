@@ -29,23 +29,6 @@ const fetchData = async () => {
     console.log(parsedData);
 
     for (var i = 0; i < parsedData.nombre.length; i++) {
-      var html = [
-        '<div class="col-md-auto">' +
-          `<div class="card" id=${i}>` +
-          '<div class="card-body">' +
-          '<h5 class="card-title">' +
-          parsedData.nombre[i] +
-          "</h5>" +
-          '<p class="card-text">' +
-          parsedData.direccion[i] +
-          "</p>" +
-          "</div>" +
-          "</div>" +
-          "</div>",
-      ];
-
-      $("#container-turistico").append(html);
-
       var firefoxIcon = L.icon({
         iconUrl:
           "https://cdn4.iconfinder.com/data/icons/small-n-flat/24/map-marker-512.png",
@@ -59,17 +42,47 @@ const fetchData = async () => {
         icon: firefoxIcon,
       }).addTo(map);
 
-      marker
-        .bindPopup(
-          `<b>${parsedData.nombre[i]}</b><br>
+      marker.bindPopup(
+        `<b>${parsedData.nombre[i]}</b><br>
            ${parsedData.direccion[i]}<br>
            ${parsedData.telefono[i]}<br>
            ${parsedData.horario[i]}<br>
            ${parsedData.costo[i]}<br>
            ${parsedData.actualizacion[i]}<br>`
-          // '<b>Hello world!</b><br>I am a popup.'
-        )
-        .openPopup();
+        // '<b>Hello world!</b><br>I am a popup.'
+      );
+
+      marker.on("click", function (e) {
+        map.setView([e.latlng.lat, e.latlng.lng], 18);
+        for (var i = 0; i < parsedData.nombre.length; i++) {
+          if (
+            Number(parsedData.lat[i]) === e.latlng.lat &&
+            Number(parsedData.long[i]) === e.latlng.lng
+          ) {
+            var html = [
+              '<h2 class="card-title">' +
+                parsedData.nombre[i] +
+                "</h2>" +
+                '<div class="card-subInfo">' +
+                "<p>" +
+                parsedData.direccion[i] +
+                "</p>" +
+                '<p class="black-bold"> <b>' +
+                parsedData.costo[i] +
+                "</b></p>" +
+                '<div class="card-stars">' +
+                '<i class="fa fa-star fa-lg"></i>' +
+                '<i class="fa fa-star fa-lg"></i>' +
+                '<i class="fa fa-star fa-lg"></i>' +
+                "</div>",
+            ];
+
+            $("#card-content").append(html);
+            map.setView([e.latlng.lat, e.latlng.lng], 13);
+          }
+        }
+        $("#container-card").show();
+      });
     }
   }
 };
