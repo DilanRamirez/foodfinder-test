@@ -1,3 +1,19 @@
+const getUserLocation = () => {
+  var userCoords = [];
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(function (position) {
+      userCoords.push(position.coords.latitude, position.coords.longitude);
+      console.log(userCoords);
+    });
+    return userCoords;
+  } else {
+    alert("Geolocation is not supported by this browser.");
+    return null;
+  }
+};
+
+getUserLocation();
+
 var map = L.map("mapid").setView([19.03793, -98.20346], 12);
 
 L.tileLayer(
