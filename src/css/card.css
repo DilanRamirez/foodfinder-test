@@ -141,6 +141,7 @@
 
   .container {
     position: relative;
+    margin-top: 30px !important;
     padding-right: 0px !important;
     padding-left: 0px !important;
     display: flex;
@@ -150,7 +151,9 @@
     border-radius: 2.5rem;
     width: 95% !important;
     height: 615px !important;
-    box-shadow: 10px 10px 72px -11px rgba(0, 0, 0, 0.29) !important;
+    -webkit-box-shadow: 10px 0px 92px 11px rgba(0, 0, 0, 0.53) !important;
+    -moz-box-shadow: 10px 0px 92px 11px rgba(0, 0, 0, 0.53) !important;
+    box-shadow: 10px 0px 92px 11px rgba(0, 0, 0, 0.53) !important;
   }
 
   .card-title {
@@ -214,14 +217,21 @@
   .fas {
     font-family: "Font Awesome 5 Free";
     color: #fff;
+    display: flex !important;
   }
-  /* .fa-times{
-    color: #fff;
+
+  .fa,
+  .far,
+  .fas:focus {
+    outline: 0px !important;
   }
-  
-  .fa-heart {
-    color: #fff;
-  } */
+
+  .likedPink {
+    color: tomato;
+  }
+  button:focus {
+    outline: 0px !important;
+  }
 
   .fa-star {
     color: yellow;
