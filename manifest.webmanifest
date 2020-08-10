@@ -1,6 +1,6 @@
 {
   "name": "Food Finder by Dilan Ramirez",
-  "short_name": "Food-Finder",
+  "short_name": "Food Finder",
   "start_url": "index.html",
   "scope": ".",
   "icons": [
