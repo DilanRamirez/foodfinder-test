@@ -9,7 +9,6 @@ $(document).ready(function () {
 });
 
 $("#home-btn").click(function () {
-  console.log("clicked");
   $("#home").hide();
   $("#mapid").show();
   $("#buttons").show();
@@ -27,6 +26,7 @@ $("#restaurantes").click(function () {
   for (var i = 0; i < layerGroupTuristico.length; i++) {
     map.removeLayer(layerGroupTuristico[i]);
   }
+
   map.setView([19.03793, -98.20346], 12);
   restaurantes();
 });
