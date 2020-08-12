@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <hr />
+      <h1>New Restaurant</h1>
+      <hr />
+
+      <form
+        name="addRestaurante"
+        action="https://abyssinian-hilarious-rayon.glitch.me/add_restaurant"
+        onsubmit="return validateForm()"
+        method="POST"
+      >
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input class="form-control" name="Nombre" />
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input class="form-control" name="Teléfono" />
+        </div>
+        <div class="form-group">
+          <label for="schedule">Schedule</label>
+          <input class="form-control" name="Horario" />
+        </div>
+        <div class="form-group">
+          <label for="price">Price</label>
+          <input class="form-control" name="Costo" />
+        </div>
+        <div class="form-group">
+          <label for="Latitud">lat</label>
+          <input class="form-control" name="Latitud" />
+        </div>
+        <div class="form-group">
+          <label for="Longitud">long</label>
+          <input class="form-control" name="Longitud" />
+        </div>
+
+        <!--Other fields-->
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      <button onclick="getUserLocation()" id="userLoc" class="btn btn-primary">
+        Get my location
+      </button>
+      <script>
+        function validateForm() {
+          var nombre = document.forms["addRestaurante"]["Nombre"].value;
+          var costo = document.forms["addRestaurante"]["Costo"].value;
+          console.log(dirección);
+          if (nombre === "") {
+            alert("Name must be filled out");
+            return false;
+          } else if (costo === "") {
+            alert("Pricemust be filled out");
+            return false;
+          }
+        }
+
+        const getUserLocation = () => {
+          navigator.geolocation.getCurrentPosition(async function (position) {
+            document.forms["addRestaurante"]["Latitud"].value = await position
+              .coords.latitude;
+            document.forms["addRestaurante"]["Longitud"].value = await position
+              .coords.longitude;
+          });
+        };
+      </script>
+    </div>
+  </body>
+</html>

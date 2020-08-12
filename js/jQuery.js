@@ -27,7 +27,7 @@ $("#restaurantes").click(function () {
     map.removeLayer(layerGroupTuristico[i]);
   }
 
-  map.setView([19.03793, -98.20346], 12);
+  // map.setView([19.03793, -98.20346], 12);
   restaurantes();
 });
 

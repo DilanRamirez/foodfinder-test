@@ -2,21 +2,29 @@ import map from "./map.js";
 
 export var layerGroupRestaurantes = [];
 const restaurantes = async () => {
-  const response = await fetch("restaurantes.json");
-  if (response.ok) {
-    const data = await response.json();
-    const results = data.result;
+  // const response = await fetch("restaurantes.json");
+  const responseServer = await fetch(
+    "https://abyssinian-hilarious-rayon.glitch.me/restaurantes"
+  );
+  if (responseServer.ok) {
+    // const data = await response.json();
+    const dataServer = await responseServer.json();
+
+    console.log(dataServer);
+
+    // const results = data.result;
+    // console.log(results);
 
     const parsedData = {
-      nombre: results.records.map((item) => item.Nombre),
-      direccion: results.records.map((item) => item.Dirección),
-      telefono: results.records.map((item) => item.Teléfono),
-      horario: results.records.map((item) => item.Horario),
-      costo: results.records.map((item) => item.Costo),
-      lat: results.records.map((item) => item.Latitud),
-      long: results.records.map((item) => item.Longitud),
+      nombre: dataServer.map((item) => item.Nombre),
+      telefono: dataServer.map((item) => item.Teléfono),
+      horario: dataServer.map((item) => item.Horario),
+      costo: dataServer.map((item) => item.Costo),
+      lat: dataServer.map((item) => item.Latitud),
+      long: dataServer.map((item) => item.Longitud),
     };
 
+    console.log(parsedData.nombre);
     for (var i = 0; i < parsedData.nombre.length; i++) {
       var firefoxIcon = L.icon({
         iconUrl:
@@ -35,7 +43,6 @@ const restaurantes = async () => {
 
       marker.bindPopup(
         `<b>${parsedData.nombre[i]}</b><br>
-             ${parsedData.direccion[i]}<br>
              ${parsedData.telefono[i]}<br>
              ${parsedData.horario[i]}<br>
              <b>${parsedData.costo[i]}</b><br>`
@@ -48,14 +55,13 @@ const restaurantes = async () => {
             Number(parsedData.lat[i]) === e.latlng.lat &&
             Number(parsedData.long[i]) === e.latlng.lng
           ) {
+            console.log(parsedData.nombre[i]);
             var html = [
               '<h2 class="card-title">' +
                 parsedData.nombre[i] +
                 "</h2>" +
                 '<div class="card-subInfo">' +
                 "<p>" +
-                parsedData.direccion[i] +
-                "</p>" +
                 '<p class="black-bold"> <b>' +
                 parsedData.costo[i] +
                 "</div>" +
